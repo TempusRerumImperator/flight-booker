@@ -1,0 +1,5 @@
+<%= form_for @booking do |book| %>
+  <%= hidden_field_tag(:flight_id, @flight_id) %>
+  <%= render @passengers %>
+  <%= book.submit 'Book' %>
+<% end %>

@@ -1,0 +1,9 @@
+<%= form_tag('/flights', method: 'get') do %>
+  <%= label_tag(:origin_id, 'Departing from:  ') %>
+  <%= select_tag(:origin_id, options_for_select(@origin), {class: 'form-control'}) %>
+  <%= label_tag(:destination_id, 'Travelling to:  ') %>
+  <%= select_tag(:destination_id, options_for_select(@destination), {class: 'form-control'}) %>
+  <%= label_tag(:depart_date, "Depart by:  ") %>
+  <%=select_tag(:depart_date, options_for_select(@dates), {class: 'form-control'}) %>
+  <%= submit_tag('Search', class: 'btn btn-primary') %>
+<% end %>

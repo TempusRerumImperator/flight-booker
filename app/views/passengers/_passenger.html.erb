@@ -1,0 +1,7 @@
+<p>
+  <%= fields_for 'passengers[]', passenger do |f| %>
+    Name: <%= f.text_field :name %>
+    Surname: <%= f.text_field :surname %>
+    Email: <%= f.text_field :email %>
+  <% end %>
+</p>

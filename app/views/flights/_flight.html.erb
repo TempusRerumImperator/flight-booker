@@ -1,0 +1,7 @@
+<tr class='active'>
+  <td><%= radio_button_tag(:flight_id, flight.id, checked: true) %> </td>
+  <td><%= flight.id %></td>
+  <td><%= flight.origin.code %></td>
+  <td><%= flight.destination.code %></td>
+  <td><%= flight.depart_time.to_s %></td>
+</tr>
