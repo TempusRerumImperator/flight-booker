@@ -27,5 +27,6 @@ class BookingsController < ApplicationController
 
   def passenger_params(passenger)
     passenger.permit(:name, :surname, :email)
+    puts ("This thing here")
   end
 end
