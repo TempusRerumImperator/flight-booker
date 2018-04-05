@@ -1,7 +1,15 @@
-<p>
-  <%= fields_for 'passengers[]', passenger do |f| %>
-    Name: <%= f.text_field :name %>
-    Surname: <%= f.text_field :surname %>
-    Email: <%= f.text_field :email %>
-  <% end %>
-</p>
+<% if passenger.name.nil? %>
+  <p>
+    <%= fields_for 'passengers[]', passenger do |f| %>
+      Name: <%= f.text_field :name %>
+      Surname: <%= f.text_field :surname %>
+      Email: <%= f.text_field :email %>
+    <% end %>
+  </p>
+<% else %>
+  <tr class='active'>
+    <th><%= passenger.name %></th>
+    <th><%= passenger.surname %></th>
+    <th><%= passenger.email %></th>
+  </tr>
+<% end %>

@@ -7,10 +7,10 @@
       <th>Departure time</th>
     </tr>
     <tr class='active'>
-      <th><%= @flight_id %></th>
-      <th><%= @origin %></th>
-      <th><%= @destination %></th>
-      <th><%= @depart_time %></th>
+      <th><%= @flight.id %></th>
+      <th><%= @flight.origin.code %></th>
+      <th><%= @flight.destination.code %></th>
+      <th><%= @flight.depart_time %></th>
     </tr>
   </table>
 </p>

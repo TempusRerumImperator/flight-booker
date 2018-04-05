@@ -1,0 +1,13 @@
+<h1>Booking Information</h1>
+<h3>Flight information</h3>
+  <%= render 'bookings/flight_info' %>
+
+<h3>Passenger information</h3>
+<table class='table table-hover'>
+  <tr class='info'>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Email Address</th>
+  </tr>
+  <%= render @passengers %>
+</table>
