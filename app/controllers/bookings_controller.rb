@@ -1,10 +1,9 @@
 class BookingsController < ApplicationController
+
   def new
     @booking = Booking.new
     @flight = Flight.find(params['flight_id'])
-    @passengers = Array.new(params['passenger_count'].to_i) do
-      @booking.passengers.build
-    end
+    @passengers = Array.new(params['passenger_count'].to_i) { Passenger.new }
   end
 
   def create
@@ -18,16 +17,15 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params['id'])
     @flight = @booking.flight
     @passengers = @booking.passengers
-    @passengers.each { |passenger| puts passenger.name }
   end
 
   private
 
-    def booking_passengers(passengers)
-      passengers.map { |passenger| Passenger.create(passenger_params(passenger)) }
-    end
+  def booking_passengers(passengers)
+    passengers.map { |passenger| Passenger.create(passenger_params(passenger)) }
+  end
 
-    def passenger_params(passenger)
-      passenger.permit(:name, :surname, :email)
-    end
+  def passenger_params(passenger)
+    passenger.permit(:name, :surname, :email)
+  end
 end
